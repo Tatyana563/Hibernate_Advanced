@@ -3,38 +3,41 @@ package hb_collection_map_sortedmap;
 import org.hibernate.annotations.SortComparator;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 
 @Entity
 
-@Table(name="student")
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="first_name")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name="last_name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
 
 
     @ElementCollection
-    @CollectionTable(name="image")
-    @MapKeyColumn(name="file_name")
-    @Column(name="image_name")
+    @CollectionTable(name = "image")
+    @MapKeyColumn(name = "file_name")
+    @Column(name = "image_name")
 
 
-  //  @SortComparator(ReverseStringComparator.class)
-    @OrderBy("file_name desc")
+    @SortComparator(ReverseStringComparator.class)
+    //   @OrderBy("file_name desc")
     private Map<String, String> images = new TreeMap<>();
 
-    public static class ReverseStringComparator implements Comparator<String>{
+    public static class ReverseStringComparator implements Comparator<String> {
 
         @Override
         public int compare(String o1, String o2) {

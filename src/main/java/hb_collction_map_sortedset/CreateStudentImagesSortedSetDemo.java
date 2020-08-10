@@ -1,12 +1,10 @@
 package hb_collction_map_sortedset;
 
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Map;
 import java.util.Set;
 
 
@@ -18,9 +16,9 @@ public class CreateStudentImagesSortedSetDemo {
                 .buildSessionFactory();
 
         Session session = factory.getCurrentSession();
-        try{
-          Student tempStudent = new Student("Mark","Woe","mark@gmail.com");
-         Set<String> theImages = tempStudent.getImages();
+        try {
+            Student tempStudent = new Student("Mark", "Woe", "mark@gmail.com");
+            Set<String> theImages = tempStudent.getImages();
 
             theImages.add("photo1.jpg");
             theImages.add("photo2.jpg");
@@ -29,8 +27,7 @@ public class CreateStudentImagesSortedSetDemo {
             session.beginTransaction();
             session.persist(tempStudent);
             session.getTransaction().commit();
-        }
-        finally{
+        } finally {
             session.close();
             factory.close();
         }

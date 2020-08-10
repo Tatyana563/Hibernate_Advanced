@@ -1,9 +1,9 @@
-package hb_inheritance_joinedtable.hb_inheritance_tableperclass;
+package hb_inheritance_joinedtableperclass;
 
 
 
-import hb_inheritance_joinedtable.Instructor;
-import hb_inheritance_joinedtable.Student;
+import hb_inheritance_joinedtableperclass.Instructor;
+import hb_inheritance_joinedtableperclass.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

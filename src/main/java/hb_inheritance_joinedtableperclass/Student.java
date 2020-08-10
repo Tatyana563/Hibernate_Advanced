@@ -1,11 +1,10 @@
-package hb_inheritance_joinedtable;
+package hb_inheritance_joinedtableperclass;
 
 
 
 import javax.persistence.Entity;
 
 @Entity
-
 public class Student extends SuperUser {
     private String course;
 

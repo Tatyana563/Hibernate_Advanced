@@ -17,12 +17,14 @@ public class CreateInheritanceTablePerClassDemo {
 
         Session session = factory.getCurrentSession();
         try {
-           Student student = new Student("Jack", "Black", "jack@gmail.com", "Hibernate");
-           Instructor instructor = new Instructor("Instructor", "master", "master@gmail.com", 100);
+          MainUser student = new Student("Jack", "Black", "jack@gmail.com", "Hibernate");
+          MainUser instructor = new Instructor("Instructor", "master", "master@gmail.com", 100);
             session.beginTransaction();
-            session.save(student);
-            session.save(instructor);
+            session.persist(student);
+            session.persist(instructor);
             session.getTransaction().commit();
+
+
         } finally {
             session.close();
             factory.close();

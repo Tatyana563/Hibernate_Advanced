@@ -1,4 +1,4 @@
-package hb_inheritance_joinedtable;
+package hb_inheritance_joinedtableperclass;
 
 import javax.persistence.Entity;
 

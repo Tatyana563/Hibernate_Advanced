@@ -24,7 +24,7 @@
 		<!-- Set the current session context -->
 		<property name="current_session_context_class">thread</property>
 
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 <!--        In case of create-drop, schema is not dropped on closing the session. It drops only on closing the SessionFactory.-->
 <!--        update: it alters the existing table in the database when you perform operation. You can add or remove columns with this option of hbm2ddl.
 But if you are going to add a new column that is 'NOT NULL' then it will ignore adding that particular column to the DB. Because the Table must be empty if you want to add a 'NOT NULL' column to the existing table.-->

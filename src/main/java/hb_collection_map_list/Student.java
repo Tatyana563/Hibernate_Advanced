@@ -2,36 +2,33 @@ package hb_collection_map_list;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 @Entity
-
-@Table(name="student")
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="first_name")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name="last_name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
 
 
     @ElementCollection
     @CollectionTable(
-            name="image",
-            joinColumns=@JoinColumn(name="student_id")
+            name = "image",
+            joinColumns = @JoinColumn(name = "student_id")
     )
-    @OrderColumn(name="order_of_images")
-    @Column(name="file_name")
+    @OrderColumn(name = "order_of_images")
+    @Column(name = "file_name")
     private List<String> images = new ArrayList<>();
 
     public int getId() {

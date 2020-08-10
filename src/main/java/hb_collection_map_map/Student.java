@@ -1,42 +1,40 @@
 package hb_collection_map_map;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
 @Entity
 
-@Table(name="student")
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_2;
 
-    @Column(name="first_name")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name="last_name")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
 
 
     @ElementCollection
-    @CollectionTable(name="image")
+    @CollectionTable(name = "image",joinColumns = {@JoinColumn(name = "student_id", referencedColumnName = "id_2")})
     @MapKeyColumn(name = "file_name")
-    @Column(name="image_name")
+    @Column(name = "image_name")
     private Map<String, String> images = new HashMap<>();
 
-    public int getId() {
-        return id;
+    public int getId_2() {
+        return id_2;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_2(int id_2) {
+        this.id_2 = id_2;
     }
 
     public String getFirstName() {

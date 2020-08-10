@@ -16,19 +16,19 @@ public class CreateStudentImagesListDemo {
                 .buildSessionFactory();
 
         Session session = factory.getCurrentSession();
-        try{
-          Student tempStudent = new Student("Mark","Woe","mark@gmail.com");
-          List<String> theImages = tempStudent.getImages();
+        try {
+            Student tempStudent = new Student("Mark", "Woe", "mark@gmail.com");
+            List<String> theImages = tempStudent.getImages();
 
             theImages.add("photo1.jpg");
             theImages.add("photo2.jpg");
+            theImages.add("photo3.jpg");
             theImages.add("photo3.jpg");
 
             session.beginTransaction();
             session.persist(tempStudent);
             session.getTransaction().commit();
-        }
-        finally{
+        } finally {
             session.close();
             factory.close();
         }
