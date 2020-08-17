@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
+
 
 public class CreateInheritanceMappedSuperClassDemo {
     public static void main(String[] args) {
@@ -25,7 +27,21 @@ public class CreateInheritanceMappedSuperClassDemo {
             session.getTransaction().commit();
         } finally {
             session.close();
-            factory.close();
+//            factory.close();
+        }
+
+        createQuery(factory);
+    }
+
+    public static void createQuery(SessionFactory factory) {
+        try(Session session = factory.openSession()) {
+            session.beginTransaction();
+
+            List<MainUser> users = session.createQuery("from hb_inheritance_mappedsuperclass.MainUser").list();
+            System.out.println(users);
+            session.getTransaction().commit();
+        } finally {
+//            factory.close();
         }
     }
 }

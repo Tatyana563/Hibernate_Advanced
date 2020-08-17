@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 public class Student extends MainUser {
     private String course;
 
+    public Student() {
+    }
+
     public Student(String firstName, String lastName, String email, String course) {
         super(firstName, lastName, email);
         this.course = course;

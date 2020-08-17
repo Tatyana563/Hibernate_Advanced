@@ -68,6 +68,7 @@ public class SuperUser {
                 '}';
     }
 
+
     public SuperUser(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;

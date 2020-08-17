@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 public class Instructor extends MainUser {
     private double salary;
 
+    public Instructor() {
+    }
+
     public Instructor(String firstName, String lastName, String email, double salary) {
         super(firstName, lastName, email);
         this.salary = salary;

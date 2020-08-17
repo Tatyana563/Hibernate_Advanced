@@ -64,6 +64,9 @@ public class MainUser {
                 '}';
     }
 
+    public MainUser() {
+    }
+
     public MainUser(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
